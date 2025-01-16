@@ -590,13 +590,14 @@ Let’s make a difference. 🐸<img src="rico22.png" alt="Flag of Puerto Rico" w
 }
 </style>
   
-  <style>
+  <!-- Replace the existing moving-container div and its contents with this updated version -->
+<style>
     @keyframes moveRightToLeft {
       0% {
-        transform: translateX(100%); /* Start from the right */
+        transform: translateX(100%);
       }
       100% {
-        transform: translateX(-100%); /* Move to the left, off the screen */
+        transform: translateX(-100%);
       }
     }
 
@@ -605,31 +606,59 @@ Let’s make a difference. 🐸<img src="rico22.png" alt="Flag of Puerto Rico" w
       align-items: center;
       justify-content: center;
       margin-top: 20px;
-      animation: moveRightToLeft 10s linear infinite; /* Adjust duration for speed */
-      position: relative; /* Ensure relative positioning for child elements */
+      animation: moveRightToLeft 10s linear infinite;
+      position: relative;
+      overflow: hidden;
     }
 
     .moving-container video {
-      width: 150px; /* Set a fixed width for the videos */
-      height: 150px; /* Set a fixed height for the videos */
-      border-radius: 50%; /* Keep the border radius */
-      margin: 0 20px; /* Space between videos */
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 20px;
     }
-  </style>
 
-  <div class="moving-container">
-    <video controls autoplay loop muted>
-      <source src="concho2.MP4" type="video/mp4">
-      Your browser does not support the video tag.
+    /* Mobile-specific styles */
+    @media screen and (max-width: 768px) {
+      .moving-container {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+      }
+      
+      .moving-container video {
+        width: 100px;
+        height: 100px;
+        margin: 0 10px;
+      }
+    }
+</style>
+
+<div class="moving-container">
+    <video 
+        playsinline 
+        autoplay 
+        muted 
+        loop 
+        preload="auto"
+        webkit-playsinline>
+        <source src="concho2.MP4" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
     <div style="text-align: center;">
-      <h2>BUY NOW</h2>
+        <h2>BUY NOW</h2>
     </div>
-    <video controls autoplay loop muted>
-      <source src="concho4.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+    <video 
+        playsinline 
+        autoplay 
+        muted 
+        loop 
+        preload="auto"
+        webkit-playsinline>
+        <source src="concho4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
-  </div>
+</div>
   
   <div class="section-2 pre-showcase mt100">
     <div class="feature-wrap">
